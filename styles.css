@@ -1,0 +1,251 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Гарантирует, что высота body заполняет весь экран */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2em;
+    flex: 1; /* Заставляет основной контент занимать все доступное пространство */
+}
+
+.product-list, .service-list, .news-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between; /* Добавляет равномерное пространство между элементами */
+}
+
+.product-content {
+    background-color: #fff; /* Цвет фона */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px rgba(32, 6, 184, 0.1);
+    padding: 1em; /* Отступ вокруг содержимого */
+    text-align: center; /* Выравнивание содержимого по центру */
+    flex: 1 1 calc(20% - 1em); /* Устанавливает ширину 20% с учетом отступов */
+    box-sizing: border-box; /* Включает padding и border в общую ширину */
+}
+
+.details {
+    display: none;
+}
+
+.product-content:hover .details {
+    display: block;
+    position: absolute; /* Выпадающий список будет позиционироваться относительно родителя */
+    top: 100%; /* Располагает выпадающий список сразу под родителем */
+    left: 0; /* Выравнивает выпадающий список по левой стороне родителя */
+    z-index: 1; /* Обеспечивает, что выпадающий список будет над другими элементами */
+}
+
+.service-item{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1em;
+    width: calc(33% - 2em);
+    box-sizing: border-box;
+}
+
+.product-item {
+    position: relative;
+    display: inline-block;
+}
+.details {
+    display: none;
+    width: 100%; /* Устанавливает ширину выпадающего списка равной ширине родителя */
+}
+.product-item .details {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    max-height: 200px; /* Максимальная высота прокручиваемого списка */
+    overflow-y: auto;
+}
+
+.product-item img {
+    width: 100%; /* Ширина изображения равна ширине контейнера */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    max-height: 150px; /* Максимальная высота изображения */
+    object-fit: cover; /* Масштабирует изображение и обрезает его, чтобы заполнить контейнер */
+}
+
+.product-item ul {
+    padding: 0;
+    margin: 0;
+}
+
+.product-item ul li {
+    list-style-type: none;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.product-item ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.service-item {
+    text-align: center; /* Центрирует все содержимое внутри .service-item */
+    max-width: 500px; /* Максимальная ширина элемента */
+    margin: 0 auto; /* Центрирует элемент на странице */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px rgba(32, 6, 184, 0.1);
+}
+
+
+.service-item {
+    text-align: center; /* Центрирует все содержимое внутри .service-item */
+    max-width: 500px; /* Максимальная ширина элемента */
+    margin: 0 auto; /* Центрирует элемент на странице */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px rgba(32, 6, 184, 0.1);
+}
+
+.card-img-top {
+    width: 100%; /* Ширина изображения равна ширине родительского элемента */
+    height: 200px; /* Фиксированная высота изображения */
+    object-fit: cover; /* Изображение будет масштабироваться и обрезаться, чтобы заполнить заданную ширину и высоту */
+    display: block;
+    margin: 0 auto;
+    max-width: 350px;
+    
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative; /* Используем position: relative; вместо absolute */
+    width: 100%;
+}
+
+/* Стили для вкладок FAQ */
+.tab {
+    margin-bottom: 20px;
+}
+
+.question {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.answer {
+    display: none;
+    padding: 10px;
+}
+
+.active .answer {
+    display: block;
+}
+/* Стили для формы обратной связи */
+section {
+    text-align: center; /* Центрируем текст в секции */
+}
+
+.contact-info {
+    margin-bottom: 20px; /* Добавляем небольшой отступ между контактной информацией и формой */
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем элементы формы по горизонтали */
+    max-width: 400px; /* Максимальная ширина формы */
+    margin: 0 auto; /* Центрируем форму по горизонтали */
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Максимальная ширина формы */
+    margin: 0 auto; /* Центрирование формы на странице */
+}
+
+#contact-form label {
+    margin-bottom: 5px;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%; /* Растягиваем поля ввода по ширине */
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Учитываем padding и border в общей ширине */
+}
+
+#contact-form button {
+    width: 100%; /* Растягиваем кнопку по ширине */
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #716e65;
+}
+.map-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Центрируем карту */
+}
+

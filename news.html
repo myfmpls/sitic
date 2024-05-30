@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости - Металлургический Завод «Работяга»</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Металлургический Завод «Работяга»</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О компании</a></li>
+                <li><a href="products.html">Продукция</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container container-faq">
+                <h2 class="title">Ответы на вопросы</h2>
+                <p class="description lg-only">все самое главное</p>
+                <div class="faq-holder">
+                    <div class="tab">
+                        <button class="question text-large-2">Что такое Тинькофф Двор?</button>
+                        <div class="answer">Тинькофф Двор – это летний офлайн-фестиваль в самом сердце Санкт-Петербурга. В программе фестиваля вас ждут образовательные лекции, стендапы с известными комиками, кино и музыка, еда и много других развлечений.</div>
+                    </div>
+                    <div class="tab">
+                        <button class="question text-large-2">Вход на фестиваль бесплатный?</button>
+                        <div class="answer">Все гости могут пройти на фестиваль абсолютно бесплатно. Чтобы получить билет, нужно зарегистрироваться.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Металлургический Завод «Работяга». Все права защищены.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const questions = document.querySelectorAll('.question');
+
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
